@@ -33,7 +33,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-	err = pdfg.WriteFile("./tmp/output.pdf")
+	err = pdfg.WriteFile("./output.pdf")
 	if err != nil {
 		log.Fatal(err)
 	}
