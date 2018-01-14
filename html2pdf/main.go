@@ -19,10 +19,7 @@ func main() {
 	var page *wkhtmltopdf.Page
 	for _, url := range urls {
 		page = wkhtmltopdf.NewPage(url)
-
-		// This seconds make it possible to convert about 100 page
-		page.RunScript.Set("setInterval(function(){if(document.readyState=='complete') window.status='done';},25000)")
-		page.WindowStatus.Set("done")
+		page.DisableJavascript.Set(true)
 
 		pdfg.AddPage(page)
 	}
